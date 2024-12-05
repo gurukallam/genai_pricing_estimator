@@ -26,7 +26,7 @@ output_token_count = 1000000  # Default value for output tokens
 
 if input_method == "Text Area":
     # Textbox for user input
-    default_text = "a" * 10  # Default text with 100,000 characters
+    default_text = "This is a default text to calculate token count. " * 20  # Default text with 100,000 characters
     user_input = st.sidebar.text_area("Enter your text to calculate token:", key="input", height=200, value=default_text)
     input_token_count = len(tiktoken.get_encoding("cl100k_base").encode(user_input))
 elif input_method == "File Upload":

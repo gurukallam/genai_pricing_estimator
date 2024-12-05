@@ -1,0 +1,81 @@
+# Definitions:
+# - Language Models: AI models designed to understand and generate human-like text based on input prompts.
+# - Embedding Models: Models that convert text into numerical vectors, capturing semantic meaning for tasks like similarity analysis.
+# - Base Models: Foundational models trained on large datasets, serving as the backbone for specialized tasks.
+
+Language Models:
+  - name: GPT-4
+    models:
+      - name: gpt-4
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.03  # $0.03 per 1,000 prompt tokens
+        output_cost: 0.06  # $0.06 per 1,000 completion tokens
+        per_token: 1000
+      - name: gpt-4-32k
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.06  # $0.06 per 1,000 prompt tokens
+        output_cost: 0.12  # $0.12 per 1,000 completion tokens
+        per_token: 1000
+    features:
+      - High accuracy and advanced reasoning
+      - Supports large-scale enterprise applications
+
+  - name: Claude 3
+    models:
+      - name: claude-3-sonnet
+        # Pricing reference: https://www.anthropic.com/claude/sonnet
+        input_cost: 0.003  # $0.003 per 1,000 prompt tokens
+        output_cost: 0.015  # $0.015 per 1,000 completion tokens
+        per_token: 1000
+      - name: claude-3-opus
+        # Pricing reference: https://www.anthropic.com/claude/sonnet
+        input_cost: 0.005  # $0.005 per 1,000 prompt tokens
+        output_cost: 0.025  # $0.025 per 1,000 completion tokens
+        per_token: 1000
+    features:
+      - Ideal for complex task handling and API integrations
+      - High performance with nuanced understanding
+
+Embedding Models:
+  - name: OpenAI Embeddings
+    models:
+      - name: text-embedding-ada-002
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.0004  # $0.0004 per 1,000 tokens
+        per_token: 1000
+      - name: text-embedding-babbage-002
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.0005  # $0.0005 per 1,000 tokens
+        per_token: 1000
+    features:
+      - Optimized for similarity, clustering, and categorization
+      - Widely used in search and recommendation systems
+
+  - name: Google Embeddings
+    models:
+      - name: text-embedding-gecko
+        # Pricing reference: https://cloud.google.com/vertex-ai/pricing
+        input_cost: 0.001  # $0.001 per 1,000 tokens
+        per_token: 1000
+      - name: text-embedding-gecko-premium
+        # Pricing reference: https://cloud.google.com/vertex-ai/pricing
+        input_cost: 0.002  # $0.002 per 1,000 tokens
+        per_token: 1000
+    features:
+      - Designed for advanced similarity and clustering
+      - Suitable for multilingual enterprise use cases
+
+Base Models:
+  - name: OpenAI Base
+    models:
+      - name: davinci-002
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.02  # $0.02 per 1,000 tokens
+        per_token: 1000
+      - name: curie-002
+        # Pricing reference: https://openai.com/pricing
+        input_cost: 0.002  # $0.002 per 1,000 tokens
+        per_token: 1000
+    features:
+      - Suitable for custom fine-tuning
+      - Used as foundational models for enterprise solutions

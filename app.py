@@ -8,13 +8,41 @@ st.set_page_config(
     page_title="OpenAI API Pricing Calculator",
     page_icon="💡",
     initial_sidebar_state="expanded",
+    layout="wide"
 )
+
+# Add custom CSS for styling
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f0f2f6;
+    }
+    .sidebar .sidebar-content {
+        background-color: #f0f2f6;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .stButton>button:hover {
+        background-color: #45a049;
+    }
+    .stTable {
+        margin-top: 20px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Title and description
+st.title("GenAI Model Pricing Calculator")
+st.markdown("Use this tool to estimate the cost of using GenAI Models based on your input and output tokens.")
 
 # Load model attributes from YAML file
 with open("config.yaml", "r") as file:
     models_data = yaml.safe_load(file)
 
-# Dropdown to select input method
+# Sidebar for input method selection
+st.sidebar.header("Input Method")
 input_method = st.sidebar.selectbox(
     "Select input method",
     ("Text Area", "File Upload", "Input Tokens")
@@ -59,7 +87,7 @@ output_token_count = st.sidebar.number_input("Number of output tokens", min_valu
 col1, col2, *cols = st.columns(8)
 
 # Calculate pricing
-with st.spinner():
+with st.spinner("Calculating..."):
     results = []
     for model_type, model_classes in models_data.items():
         for model_class in model_classes:

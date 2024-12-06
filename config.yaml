@@ -4,6 +4,18 @@
 # - Base Models: Foundational models trained on large datasets, serving as the backbone for specialized tasks.
 
 Language Models:
+  - name: OpenAI o1
+    models:
+      - name: o1
+        pricing_info: https://openai.com/pricing
+        input_cost: 0.0025  # $0.0025 per 1,000 input tokens
+        output_cost: 0.01  # $0.01 per 1,000 output tokens
+        per_token: 1000
+    features:
+      - Advanced reasoning capabilities
+      - Supports both text and image inputs
+      - Faster response times compared to previous versions
+
   - name: GPT-4
     models:
       - name: gpt-4
@@ -20,50 +32,66 @@ Language Models:
       - High accuracy and advanced reasoning
       - Supports large-scale enterprise applications
 
+  - name: GPT-3.5 Turbo
+    models:
+      - name: gpt-3.5-turbo
+        pricing_info: https://openai.com/pricing
+        input_cost: 0.0015  # $0.0015 per 1,000 tokens
+        output_cost: 0.002  # $0.002 per 1,000 tokens
+        per_token: 1000
+    features:
+      - Cost-effective for various applications
+      - Improved performance over previous versions
+
+  - name: Claude 3.5
+    models:
+      - name: claude-3.5-sonnet
+        pricing_info: https://www.anthropic.com/claude/sonnet
+        input_cost: 0.003  # $0.003 per 1,000 input tokens
+        output_cost: 0.015  # $0.015 per 1,000 output tokens
+        per_token: 1000
+      - name: claude-3.5-haiku
+        pricing_info: https://www.anthropic.com/claude/haiku
+        input_cost: 0.001  # $0.001 per 1,000 input tokens
+        output_cost: 0.005  # $0.005 per 1,000 output tokens
+        per_token: 1000
+    features:
+      - Enhanced coding and reasoning capabilities
+      - Faster response times suitable for lightweight tasks
+
   - name: Claude 3
     models:
-      - name: claude-3-sonnet
-        pricing_info: https://www.anthropic.com/claude/sonnet
-        input_cost: 0.003  # $0.003 per 1,000 prompt tokens
-        output_cost: 0.015  # $0.015 per 1,000 completion tokens
-        per_token: 1000
       - name: claude-3-opus
-        pricing_info: https://www.anthropic.com/claude/sonnet 
-        input_cost: 0.005  # $0.005 per 1,000 prompt tokens
-        output_cost: 0.025  # $0.025 per 1,000 completion tokens
+        pricing_info: https://www.anthropic.com/claude/opus
+        input_cost: 0.005  # $0.005 per 1,000 input tokens
+        output_cost: 0.025  # $0.025 per 1,000 output tokens
         per_token: 1000
     features:
       - Ideal for complex task handling and API integrations
       - High performance with nuanced understanding
 
-  - name: Google PaLM 2
+  - name: Google Gemini 1.5
     models:
-      - name: text-bison-001
-        pricing_info: https://cloud.google.com/vertex-ai/pricing#generative_ai_models
-        input_cost: 0.0005  # $0.0005 per 1,000 characters
-        output_cost: 0.001  # $0.001 per 1,000 characters
-        per_token: 1000 # Characters are roughly equivalent to tokens
-      - name: chat-bison-001
-        pricing_info: https://cloud.google.com/vertex-ai/pricing#generative_ai_models
-        input_cost: 0.001  # $0.001 per 1,000 characters
-        output_cost: 0.002  # $0.002 per 1,000 characters
-        per_token: 1000 # Characters are roughly equivalent to tokens
-    features:
-      - Highly capable and versatile for various tasks
-      - Strong in reasoning, coding, and translation
-
-
-Base Models:
-  - name: OpenAI Base
-    models:
-      - name: davinci-002
-        pricing_info: https://openai.com/pricing
-        input_cost: 0.02  # $0.02 per 1,000 tokens
+      - name: gemini-1.5-pro
+        pricing_info: https://cloud.google.com/vertex-ai/generative-ai/pricing
+        input_cost: 0.01  # $0.01 per 1,000 input tokens
+        output_cost: 0.02  # $0.02 per 1,000 output tokens
         per_token: 1000
-      - name: curie-002
-        pricing_info: https://openai.com/pricing
-        input_cost: 0.002  # $0.002 per 1,000 tokens
+      - name: gemini-1.5-flash
+        pricing_info: https://cloud.google.com/vertex-ai/generative-ai/pricing
+        input_cost: 0.0005  # $0.0005 per 1,000 input tokens
+        output_cost: 0.001  # $0.001 per 1,000 output tokens
         per_token: 1000
     features:
-      - Suitable for custom fine-tuning
-      - Used as foundational models for enterprise solutions
+      - Multimodal processing capabilities
+      - Supports long-context understanding up to 1 million tokens
+
+  - name: Imagen 3
+    models:
+      - name: imagen-3
+        pricing_info: https://cloud.google.com/vertex-ai/generative-ai/pricing
+        input_cost: 0.04  # $0.04 per image generated
+        per_token: 1
+    features:
+      - High-quality text-to-image generation
+      - Supports various styles and formats

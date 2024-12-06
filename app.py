@@ -118,6 +118,8 @@ with st.spinner("Calculating..."):
                         + output_token_count * output_cost_per_token / per_token
                     )
 
+                features = ", ".join(model_class.get("features", []))
+
                 results.append({
                     "Model Class": model_class["name"],
                     "Model": model["name"],
@@ -126,7 +128,8 @@ with st.spinner("Calculating..."):
                     "Number of Output Tokens": output_token_count,
                     "Input Cost per Token": f"${input_cost_per_token}",
                     "Output Cost per Token": f"${output_cost_per_token}",
-                    "Total Cost": f"${total_cost:.7f}"
+                    "Total Cost": f"${total_cost:.7f}",
+                    "Features": features
                 })
 
     result_df = pd.DataFrame(results)
